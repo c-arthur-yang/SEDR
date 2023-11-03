@@ -48,8 +48,8 @@ def mclust_R(adata, n_clusters, use_rep='SEDR', key_added='SEDR', random_seed=20
     Clustering using the mclust algorithm.
     The parameters are the same as those in the R package mclust.
     """
-    import os
-    os.environ['R_HOME'] = '/opt/conda/bin/'
+    # import os
+    # os.environ['R_HOME'] = '/opt/conda/bin/'
 
     np.random.seed(random_seed)
     import rpy2.robjects as robjects
