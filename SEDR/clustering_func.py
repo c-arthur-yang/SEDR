@@ -61,7 +61,7 @@ def mclust_R(adata, n_clusters, use_rep='SEDR', key_added='SEDR', random_seed=20
     r_random_seed(random_seed)
     rmclust = robjects.r['Mclust']
 
-    res = rmclust(rpy2.robjects.numpy2ri.numpy2rpy(adata.obsm[use_rep]), n_clusters, modelNames)
+    res = rmclust(rpy2.robjects.numpy2ri.numpy2rpy(adata.obsm[use_rep]), n_clusters)
     mclust_res = np.array(res[-2])
 
     adata.obs[key_added] = mclust_res
